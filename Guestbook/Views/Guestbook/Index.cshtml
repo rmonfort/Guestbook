@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Guestbook.Models.GuestbookEntry>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Guestbook Entries</h1>
+
+<p>
+    @Html.ActionLink("Create New Entry", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatePosted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatePosted)
+        </td>
+    </tr>
+}
+</table>
